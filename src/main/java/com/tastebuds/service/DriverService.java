@@ -9,7 +9,6 @@ public class DriverService {
 
     // Register Driver
     public boolean registerDriver(String name, String pass, String license, String vehicle) {
-        // format: name,pass,license,vehicle,availability(available/busy)
         String data = name + "," + pass + "," + license + "," + vehicle + ",available";
         FileHelper.logEvent(DRIVER_FILE, data);
         return true;
@@ -25,7 +24,7 @@ public class DriverService {
         return false;
     }
 
-    // Logic: Assign based on Priority/Normal
+    // Assign based on Priority/Normal
     public String getAssignmentMessage(String orderStatus) {
         if (orderStatus.contains("Priority")) {
             return "ALARM: Priority Order! Delivery staff must be assigned within 10 mins.";

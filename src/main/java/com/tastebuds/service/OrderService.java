@@ -8,9 +8,9 @@ public class OrderService {
     private static final String USERS_FILE = "users.txt";
     private static final String ORDERS_FILE = "orders.txt";
 
-    // 1. Register User (Moved here for consistency)
+    // 1. Register User
     public boolean registerUser(String username, String password) {
-        // Check if user already exists to prevent duplicates
+        // Check if user already exists
         if (isUserExists(username)) {
             return false;
         }

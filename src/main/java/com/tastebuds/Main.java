@@ -231,7 +231,7 @@ public class Main {
                             }
                         }
 
-                        // FIX: Only ask for ID if orders were actually found
+
                         if (!ordersAvailable) {
                             System.out.println("[INFO] No orders are currently ready for delivery.");
                         } else {

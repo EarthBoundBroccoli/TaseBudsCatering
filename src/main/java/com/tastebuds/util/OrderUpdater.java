@@ -14,7 +14,7 @@ public class OrderUpdater {
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
                 if (data[0].equals(orderId)) {
-                    // Update the specific columns for HC: Status(4), Queue(5), Chefs(6), Time(7)
+
                     data[4] = newStatus;
                     data[5] = queue;
                     data[6] = chefs;
@@ -25,7 +25,7 @@ public class OrderUpdater {
             }
         } catch (IOException e) { return; }
 
-        // Write everything back
+        // Write everything
         try (PrintWriter out = new PrintWriter(new FileWriter(FILE_NAME))) {
             for (String l : lines) out.println(l);
         } catch (IOException e) { }

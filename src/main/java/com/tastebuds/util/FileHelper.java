@@ -25,7 +25,7 @@ public class FileHelper {
         List<String> lines = new ArrayList<>();
         File file = new File(fileName);
 
-        if (!file.exists()) return lines; // Return empty list if file doesn't exist yet
+        if (!file.exists()) return lines;
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
@@ -39,7 +39,7 @@ public class FileHelper {
         return lines;
     }
 
-    // Overwriting logic (Used for updating statuses)
+    // Overwriting logic
     public static void overwriteFile(String fileName, List<String> lines) {
         try (PrintWriter out = new PrintWriter(new FileWriter(fileName))) {
             for (String line : lines) {
